@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pas cu Pas | Principala</title>
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .spectral-light {
+      font-family: 'Spectral', serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    .spectral-regular {
+      font-family: "Spectral", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .spectral-medium {
+      font-family: "Spectral", serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .spectral-semibold {
+      font-family: "Spectral", serif;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @keyframes solidify {
+      0% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+      100% {
+        background-color: rgb(255, 255, 255);
+      }
+    }
+
+    .header {
+      animation: solidify linear both;
+      animation-timeline: scroll();
+      animation-range: 0 550px; /* how fast it becomes solid */
+    }
+  </style>
+</head>
+
+<body>
+  <main class="w-full min-h-svh relative">
+    <div id="top-sentinel"></div>
+
+    <!-- Header -->
+    <header class="p-4 fixed top-0 bg-white z-60 header w-full">
+      <div class="sm:flex justify-between items-center max-w-[1000px] mx-auto">
+        <a href="index.html">
+          <img src="assets/img/logo-wide.png" alt="Logo Wide" class="h-12 mx-auto sm:mx-none">
+        </a>
+        
+        <div class="hidden sm:flex justify-center items-center gap-6">
+          <a href="index.html" class="text-lg font-medium hover:text-red-500 transition">Principala</a>
+          <a href="index.html" class="text-lg font-medium hover:text-red-500 transition">Despre noi</a>
+          <a href="index.html" class="text-lg font-medium hover:text-red-500 transition">Noutăți</a>
+          <a href="index.html" class="text-lg font-medium hover:text-red-500 transition">Contacte</a>
+        </div>
+      </div>
+    </header>
+    <!-- End Header section -->
+
+
+
+    <!-- Hero section -->
+    <section class="w-full h-[80svh] relative">
+      <div class="w-full h-full bg-[url(assets/img/home/hero.jpg)] opacity-50 bg-cover bg-top mask-b-from-30%"></div>
+
+      <div class="w-full h-full flex flex-col justify-center items-center absolute top-0">
+        <h1 class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-center spectral-semibold w-full">
+          O școală bună<br> o facem împreună!
+        </h1>
+
+        <p class="pt-26 px-10 max-w-[500px] md:max-w-[600px] text-center text-md md:text-lg font-light">
+          Fiecare zi, elevii, învățătorii și personalul Școlii "Pas cu Pas" își aduc cunoștințele, energia și creativitatea pentru a sprijini învățarea, dezvoltarea și bunăstarea comunității școlare.
+        </p>
+      </div>
+    </section>
+
+
+
+    <!-- Priorities section -->
+    <section class="max-w-[1300px] mx-auto flex flex-col gap-6">
+      <div class="flex flex-col md:flex-row gap-6 items-center p-6">
+        <div class="bg-[url(assets/img/home/priority1.jpg)] w-full h-[300px] md:h-[350px] bg-center bg-cover"></div>
+        <div class="md:ml-10 w-full">
+          <h3 class="text-4xl md:text-5xl mb-2 spectral-medium">Interacțiune</h3>
+          <p class="md:text-lg">
+            Activitățile și proiectele Școlii "Pas cu Pas" promovează comunicarea deschisă, colaborarea și respectul dintre elevi, profesori și părinți. Pe parcursul anului, copiii participă la jocuri de echipă, ateliere și evenimente care îi ajută să învețe împreună, să asculte și să se sprijine reciproc.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6 items-center p-6">
+        <div class="md:hidden bg-[url(assets/img/home/priority2.jpg)] w-full h-[300px] md:h-[350px] bg-center bg-cover"></div>
+        <div class="md:mr-10 w-full">
+          <h3 class="text-4xl md:text-5xl mb-2 spectral-medium">Incluziunea socială și valori democratice</h3>
+          <p class="text-lg">
+            Programele noastre susțin implicarea fiecărui copil și dezvoltarea spiritului civic, indiferent de proveniență sau abilități. În fiecare an, elevii iau parte la activități care încurajează responsabilitatea, echitatea, cooperarea și înțelegerea diversității din comunitatea școlară.
+          </p>
+        </div>
+        <div class="hidden md:block bg-[url(assets/img/home/priority2.jpg)] w-full h-[300px] md:h-[350px] bg-center bg-cover"></div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6 items-center p-6">
+        <div class="bg-[url(assets/img/home/priority3.jpg)] w-full h-[300px] md:h-[350px] bg-center bg-cover"></div>
+        <div class="md:ml-10 w-full">
+          <h3 class="text-4xl md:text-5xl mb-2 spectral-medium">Familia și comunitatea</h3>
+          <p class="text-lg">
+            Parteneriatele cu părinții și colaborarea cu comunitatea locală sunt în centrul vieții școlare. De-a lungul anului, organizăm întâlniri, sărbători, proiecte comune și acțiuni de voluntariat care apropie familia de procesul educațional și întăresc legăturile dintre copii și mediul în care trăiesc.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6 items-center p-6">
+        <div class="md:hidden bg-[url(assets/img/home/priority4.jpg)] w-full h-[300px] md:h-[350px] bg-center bg-cover"></div>
+        <div class="md:mr-10 w-full">
+          <h3 class="text-4xl md:text-5xl mb-2 spectral-medium">Mediu de învățare stimulativ și atractiv</h3>
+          <p class="text-lg">
+            Curriculumul și activitățile Școlii Nr. 152 sunt create pentru a inspira curiozitatea, creativitatea și dorința de a descoperi. În fiecare semestru, elevii participă la explorări practice, proiecte tematice și activități interactive care transformă sala de clasă într-un spațiu prietenos și motivant.
+          </p>
+        </div>
+        <div class="hidden md:block bg-[url(assets/img/home/priority4.jpg)] w-full h-[300px] md:h-[350px] bg-center bg-cover"></div>
+      </div>
+    </section>
+    <!-- End Priorities section -->
+
+
+
+    <!-- Latest new section -->
+    <section class="max-w-[1300px] mx-auto p-6 lg:p-12 mt-24">
+      <h1 class="text-5xl md:text-6xl spectral-semibold">Ultimele noutăți</h1>
+
+      <hr class="my-12 mt-4 border-t-4">
+
+      <div class="grid gap-6 lg:gap-12 md:grid-cols-2 lg:grid-cols-3 w-full">
+        <a href="index.html" class="group/news1">
+          <div class="w-full overflow-hidden">
+            <div class="w-full h-64 bg-[url(assets/img/news/news1.jpg)] bg-center bg-cover group-hover/news1:scale-110 transition duration-500"></div>
+
+            <div class="bg-neutral-200 relative z-10">
+              <h3 class="p-8 pb-4 text-3xl spectral-medium">Târgul de Paști se întoarce</h3>
+              <p class="px-8 md:h-42">
+                Târgul de Paști, o tradiție frumoasă a instituției, a fost în sfârșit organizat după o perioadă îndelungată de pandemie.
+                Lucrările confecționate manual au surprins plăcut vizitatorii expoziției.
+              </p>
+
+              <div class="p-8 pt-12 flex gap-4 items-center">
+                <img src="assets/img/arrow-right.svg" alt="Arrow" class="text-red-500 transition duration-500 h-8 w-8 group-hover/news1:translate-x-2">
+                <p class="group-hover/news1:text-red-500 transition duration-500 font-semibold">Citește mai mult</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+
+
+        <a href="index.html" class="group/news2">
+          <div class="w-full overflow-hidden">
+            <div class="w-full h-64 bg-[url(assets/img/news/news2.jpg)] bg-center bg-cover group-hover/news2:scale-110 transition duration-500"></div>
+
+            <div class="bg-neutral-200 relative z-10">
+              <h3 class="p-8 pb-4 text-3xl spectral-medium">Proiectul „Școala noastră Eco”</h3>
+              <p class="px-8 md:h-42">
+                Am avut o deosebită plăcere să-i avem în ospeție pe reprezentanții DGETS: dna Corina Zavtoni, Aliona Delinschi și Adrian Odobescu.
+                Timpul frumos, dispoziția bună și activitățile desfășurate au contribuit la crearea unei sărbători deosebite. 
+              </p>
+
+              <div class="p-8 pt-12 flex gap-4 items-center">
+                <img src="assets/img/arrow-right.svg" alt="Arrow" class="text-red-500 transition duration-500 h-8 w-8 group-hover/news2:translate-x-2">
+                <p class="group-hover/news2:text-red-500 transition duration-500 font-semibold">Citește mai mult</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+
+
+        <a href="index.html" class="group/news3">
+          <div class="w-full overflow-hidden">
+            <div class="w-full h-64 bg-[url(assets/img/news/news3.jpg)] bg-center bg-cover group-hover/news3:scale-110 transition duration-500"></div>
+
+            <div class="bg-neutral-200 relative z-10">
+              <h3 class="p-8 pb-4 text-3xl spectral-medium">Lecții cu elevii din India și Indonezia</h3>
+              <p class="px-8 md:h-42">
+                Luna martie a fost una deosebită pentru elevii din clasele a IV-a, deoarece în cadrul lecțiilor de limba
+                engleză ei au beneficiat de un parteneriat frumos cu semenii lor din două țări îndepărtate – India și Indonezia.
+              </p>
+
+              <div class="p-8 pt-12 flex gap-4 items-center">
+                <img src="assets/img/arrow-right.svg" alt="Arrow" class="text-red-500 transition duration-500 h-8 w-8 group-hover/news3:translate-x-2">
+                <p class="group-hover/news3:text-red-500 transition duration-500 font-semibold">Citește mai mult</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- End News section -->
+
+
+
+    <!-- Footer section -->
+    <footer class="w-full flex flex-col sm:flex-row items-center bg-black lg:h-32 p-6 lg:px-12 gap-8 lg:gap-4">
+      <p class="text-center lg:text-left text-white text-sm w-full">
+        Copyright © 2025 <a href="https://btw.md/" class="underline" target="_blank" noopener noreferrer>Bitwave Software SRL</a>
+      </p>
+
+      <a href="index.html" class="w-full">
+        <img src="assets/img/logo-wide.png" alt="Logo" class="h-16 mx-auto">
+      </a>
+
+      <div class="w-full h-full flex gap-4 items-center justify-end">
+        <a href="https://www.facebook.com/pascupas152/?locale=ro_RO" target="_blank" class="w-10 h-10 hover:scale-115 transition" noopener noreferrer>
+          <img src="assets/img/facebook.svg" alt="Facebook" class="w-full h-full">
+        </a>
+
+        <a href="https://pascupas152.md/" target="_blank" class="w-10 h-10 hover:scale-115 transition" noopener noreferrer>
+          <img src="assets/img/rss.svg" alt="Site" class="w-full h-full">
+        </a>
+      </div>
+    </footer>
+    <!-- End Footer section -->
+  </main>
+</body>
+</html>
