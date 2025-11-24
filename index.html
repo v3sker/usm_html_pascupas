@@ -7,6 +7,9 @@
   <title>Pas cu Pas | Principala</title>
   <link rel="icon" href="assets/favicon.ico">
 
+  <!-- Mobile nav JS -->
+  <script src="assets/js/mobile-nav.js"></script>
+
   <!-- Tailwind -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -57,18 +60,83 @@
       animation-timeline: scroll();
       animation-range: 0 550px;
     }
+
+    /* Mobile nav */
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    .overlay .mobile-nav-close {
+      position: absolute;
+      top: 60px;
+      right: 25px;
+      font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .mobile-nav-close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Mobile nav -->
+  <div id="mobileNav" class="overlay">
+    <a href="javascript:void(0)" class="mobile-nav-close" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="index.html" class="text-lg font-medium hover:text-red-500 transition">Principala</a>
+      <a href="about.html" class="text-lg font-medium hover:text-red-500 transition">Despre noi</a>
+      <a href="news.html" class="text-lg font-medium hover:text-red-500 transition">Noutăți</a>
+      <a href="contacts.html" class="text-lg font-medium hover:text-red-500 transition">Contacte</a>
+    </div>
+  </div>
+  <!-- End mobile nav -->
+
+
+
   <main class="w-full min-h-svh relative">
     <div id="top-sentinel"></div>
 
     <!-- Header -->
     <header class="p-4 fixed top-0 bg-white z-60 header w-full">
-      <div class="sm:flex justify-between items-center max-w-[1000px] mx-auto">
-        <a href="index.html">
-          <img src="assets/img/logo-wide.png" alt="Logo Wide" class="h-12 mx-auto sm:mx-none">
+      <div class="flex justify-between items-center max-w-[1000px] mx-auto">
+        <a href="index.html" class="w-fit">
+          <img src="assets/img/logo-wide.png" alt="Logo Wide" class="h-12">
         </a>
         
         <div class="hidden sm:flex justify-center items-center gap-6">
@@ -78,6 +146,10 @@
           <a href="contacts.html" class="text-lg font-medium hover:text-red-500 transition">Contacte</a>
         </div>
       </div>
+
+      <span class="sm:hidden cursor-pointer absolute top-7 right-4" onclick="openNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </span>
     </header>
     <!-- End Header section -->
 
@@ -159,7 +231,7 @@
           <div class="w-full overflow-hidden">
             <div class="w-full h-64 bg-[url(assets/img/news/news1.jpg)] bg-center bg-cover group-hover/news1:scale-110 transition duration-500"></div>
 
-            <div class="bg-neutral-200 relative z-10">
+            <div class="bg-neutral-200 relative">
               <h3 class="p-8 pb-4 text-3xl spectral-medium">Târgul de Paști se întoarce</h3>
               <p class="px-8 md:h-42">
                 Târgul de Paști, o tradiție frumoasă a instituției, a fost în sfârșit organizat după o perioadă îndelungată de pandemie.
@@ -176,12 +248,11 @@
 
 
 
-
         <a href="article-template.html" class="group/news2">
           <div class="w-full overflow-hidden">
             <div class="w-full h-64 bg-[url(assets/img/news/news2.jpg)] bg-center bg-cover group-hover/news2:scale-110 transition duration-500"></div>
 
-            <div class="bg-neutral-200 relative z-10">
+            <div class="bg-neutral-200 relative">
               <h3 class="p-8 pb-4 text-3xl spectral-medium">Proiectul „Școala noastră Eco”</h3>
               <p class="px-8 md:h-42">
                 Am avut o deosebită plăcere să-i avem în ospeție pe reprezentanții DGETS: dna Corina Zavtoni, Aliona Delinschi și Adrian Odobescu.
@@ -198,12 +269,11 @@
 
 
 
-
         <a href="article-template.html" class="group/news3">
           <div class="w-full overflow-hidden">
             <div class="w-full h-64 bg-[url(assets/img/news/news3.jpg)] bg-center bg-cover group-hover/news3:scale-110 transition duration-500"></div>
 
-            <div class="bg-neutral-200 relative z-10">
+            <div class="bg-neutral-200 relative">
               <h3 class="p-8 pb-4 text-3xl spectral-medium">Lecții cu elevii din India și Indonezia</h3>
               <p class="px-8 md:h-42">
                 Luna martie a fost una deosebită pentru elevii din clasele a IV-a, deoarece în cadrul lecțiilor de limba

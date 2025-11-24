@@ -7,6 +7,9 @@
   <title>Pas cu Pas | Contacte</title>
   <link rel="icon" href="assets/favicon.ico">
 
+  <!-- Mobile nav JS -->
+  <script src="assets/js/mobile-nav.js"></script>
+
   <!-- Tailwind -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -57,18 +60,83 @@
       animation-timeline: scroll();
       animation-range: 0 550px;
     }
+
+    /* Mobile nav */
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    .overlay .mobile-nav-close {
+      position: absolute;
+      top: 60px;
+      right: 25px;
+      font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .mobile-nav-close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Mobile nav -->
+  <div id="mobileNav" class="overlay">
+    <a href="javascript:void(0)" class="mobile-nav-close" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="index.html" class="text-lg font-medium hover:text-red-500 transition">Principala</a>
+      <a href="about.html" class="text-lg font-medium hover:text-red-500 transition">Despre noi</a>
+      <a href="news.html" class="text-lg font-medium hover:text-red-500 transition">Noutăți</a>
+      <a href="contacts.html" class="text-lg font-medium hover:text-red-500 transition">Contacte</a>
+    </div>
+  </div>
+  <!-- End mobile nav -->
+
+
+
   <main class="w-full min-h-svh relative">
     <div id="top-sentinel"></div>
 
     <!-- Header -->
     <header class="p-4 fixed top-0 bg-white z-60 header w-full">
-      <div class="sm:flex justify-between items-center max-w-[1000px] mx-auto">
-        <a href="index.html">
-          <img src="assets/img/logo-wide.png" alt="Logo Wide" class="h-12 mx-auto sm:mx-none">
+      <div class="flex justify-between items-center max-w-[1000px] mx-auto">
+        <a href="index.html" class="w-fit">
+          <img src="assets/img/logo-wide.png" alt="Logo Wide" class="h-12">
         </a>
         
         <div class="hidden sm:flex justify-center items-center gap-6">
@@ -78,6 +146,10 @@
           <a href="contacts.html" class="text-lg font-medium hover:text-red-500 transition">Contacte</a>
         </div>
       </div>
+
+      <span class="sm:hidden cursor-pointer absolute top-7 right-4" onclick="openNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </span>
     </header>
     <!-- End Header section -->
 
@@ -85,7 +157,7 @@
 
     <!-- Contacts section -->
     <section class="w-full h-svh flex flex-col md:flex-row">
-      <div class="mt-20 md:mt-0 w-full h-full bg-neutral-200">
+      <div class="mt-6 md:mt-0 w-full h-full bg-neutral-200">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21772.968958467387!2d28.8727325!3d46.988775941512884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97eac90bbe169%3A0xe998816666295463!2zyJhjb2FsYS1ncsSDZGluacibxIMgbnIuIDE1MiDigJ5QYXMgY3UgUGFz4oCd!5e0!3m2!1sen!2s!4v1763820814768!5m2!1sen!2s" style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
